@@ -56,6 +56,27 @@ def simple_test():
     return "Hello There"
 
 
+############################################################
+#################################Orders
+############################################################
+
+@app.route("/api/order", methods=["POST"])
+def save_order():
+    #get the order object from the request
+    order=request.get_json()
+    if order is None:
+        return abort(400,"Nothing to save")
+
+    #validations
+    #user id is valid, order has at least one product, gather prices and add for total
+
+
+    #save the object in the database (orders collection)
+    db.orders.insert_one(order)
+
+    #return the stored object
+    return json_parse(order)
+
 
 
     ########################################################

@@ -82,3 +82,4 @@ brew services start mongodb-community@5.0
 # stop service(MAC)
 
 brew services stop mongodb-community@5.0
+***THis text was added with Python code
